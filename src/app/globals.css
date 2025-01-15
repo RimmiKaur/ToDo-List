@@ -3,19 +3,77 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --dark-bg: #000000;
+  --dark-text: #ffffff;
+  --light-bg: #ffffff;
+  --light-text: #000000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.bg-dark {
+  background-color:  #242424;
+  ;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.text-light {
+  color: var(--dark-text);
+}
+
+.bg-light {
+  background-color: var(--light-bg);
+}
+
+.text-dark {
+  color: var(--light-text);
+}
+
+
+/* General Calendar Styles */
+.custom-calendar {
+  border-radius: 8px;
+  border: none;
+}
+
+/* Dark Mode Calendar Styles */
+.custom-calendar.dark-calendar {
+  background-color: #2d2d2d; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+
+/* Change the header styles */
+.custom-calendar .react-calendar__navigation {
+  background-color: #1a1a1a; /* Darker background for header */
+  color: #fff; /* Light text for header */
+  border-bottom: 1px solid #444; /* Optional border */
+}
+
+/* Days and Tiles */
+.custom-calendar .react-calendar__tile {
+  background-color: transparent;
+  color: inherit;
+  border-radius: 4px;
+}
+
+.custom-calendar .react-calendar__tile:enabled:hover,
+.custom-calendar .react-calendar__tile--active {
+  background-color: #444; /* Highlighted background */
+  color: #fff; /* Highlighted text */
+}
+
+/* Weekday Names */
+.custom-calendar .react-calendar__month-view__weekdays {
+  background-color: #1a1a1a;
+  color: #888; /* Muted text color */
+}
+
+/* Disabled Dates */
+.custom-calendar .react-calendar__tile:disabled {
+  background-color: #333; /* Disabled tile background */
+  color: #666; /* Disabled tile text */
+}
+
+/* Today */
+.custom-calendar .react-calendar__tile--now {
+  background-color: #005f73; /* Highlight today */
+  color: #ffffff;
+  border-radius: 4px;
 }

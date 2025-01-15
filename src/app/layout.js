@@ -2,7 +2,7 @@
 import { Provider } from "react-redux";
 import store from "./redux/store"; 
 import "./globals.css";
-
+import { ThemeProvider } from "./context/ThemeContext";
 
 
 export default function RootLayout({ children }) {
@@ -20,8 +20,10 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-inter bg-gray-100 text-black">
-        {/* Wrap your app in the Redux Provider */}
-        <Provider store={store}>{children}</Provider>
+        {/* Wrap the app with both ThemeProvider and Redux Provider */}
+        <ThemeProvider>
+          <Provider store={store}>{children}</Provider>
+        </ThemeProvider>
       </body>
     </html>
   );

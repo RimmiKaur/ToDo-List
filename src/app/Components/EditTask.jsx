@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import { useTheme } from "../context/ThemeContext";
 
 export default function EditTask({
   task,
@@ -20,6 +21,13 @@ export default function EditTask({
       repeat: task.repeat || false,
     });
   
+        const { theme, toggleTheme } = useTheme();
+    
+
+        const getImageURL = (basePath) =>
+            theme === "dark" ? `${basePath}-white.png` : `${basePath}.png`;
+        
+    
 
   const [isCalendarOpen, setCalendarOpen] = useState(false);
 
@@ -51,7 +59,7 @@ export default function EditTask({
   };
 
   return (
-    <div className="p-6 bg-gray-100 text-black h-screen">
+    <div className={`p-6   h-screen ${theme === "dark" ? "bg-dark text-light" : "bg-light text-dark"} `}>
       {/* Task Title */}
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center gap-4">
@@ -81,9 +89,9 @@ export default function EditTask({
         >
           <img
             src={
-              taskDetails.priority
-                ? "/images/star-filled.png"
-                : "/images/star.png"
+                getImageURL( taskDetails.priority
+                ? "/images/star-filled"
+                : "/images/star")
             }
             alt="Priority"
             className="w-6 h-6 cursor-pointer"
@@ -99,7 +107,7 @@ export default function EditTask({
         <div className="pb-4 border-b">
           <div className="flex items-center">
             <img
-              src="/images/calendar.png"
+              src={getImageURL("/images/calendar")}
               alt="Add Due Date"
               className="w-5 h-5 mr-4"
               style={isCompleted ? disabledStyle : {}}
@@ -115,6 +123,7 @@ export default function EditTask({
           {isCalendarOpen && !isCompleted && (
             <div className="top-10 left-10 z-50 p-10">
               <Calendar
+              className={`custom-calendar ${theme === "dark" ? "dark-calendar" : ""}`}
                 onChange={(date) => handleSaveDate(date)}
                 value={
                   taskDetails.dueDate
@@ -130,9 +139,9 @@ export default function EditTask({
         <div className="flex items-center py-4 border-b">
           <img
             src={
-              taskDetails.repeat
-                ? "/images/repeat-one.png"
-                : "/images/repeat.png"
+                getImageURL(taskDetails.repeat
+                ? "/images/repeat-one"
+                : "/images/repeat")
             }
             alt="Repeat"
             className="w-5 h-5 mr-4 cursor-pointer"
@@ -170,12 +179,11 @@ export default function EditTask({
         <button
           onClick={onClose}
           className="text-gray-500"
-          disabled={isCompleted}
         >
           <img
-            src="/images/cross.png"
+            src={getImageURL("/images/cross")}
             alt="Close"
-            className="w-3 h-3"
+            className="w-3 h-3 cursor-pointer"
           />
         </button>
         <span className="text-gray-500 text-sm">Created Today</span>
@@ -186,9 +194,10 @@ export default function EditTask({
           style={isCompleted ? disabledStyle : {}}
         >
           <img
-            src="/images/trash.png"
+            src={getImageURL("/images/trash")}
             alt="Delete"
-            className="w-5 h-5"
+            className="w-5 h-5 cursor-pointer"
+            
           />
         </button>
       </div>
