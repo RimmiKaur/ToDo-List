@@ -316,6 +316,7 @@ export default function MainContent() {
                         alignItems: "center", // Vertically center the checkbox and text
                         flexWrap: "wrap", // Allow text to wrap
                       }}
+                      title="Double-click to edit"
                     >
                       <div className="flex items-start gap-4 flex-1">
                         {/* Checkbox */}
@@ -373,7 +374,7 @@ export default function MainContent() {
                         alignItems: "center", // Vertically align items
                         flexWrap: "wrap", // Wrap text if necessary
                       }}
-                    >
+                      title="Double-click to edit" >
                       {/* Task Details */}
                       <div className="flex items-start gap-4 flex-1">
                         {/* Checkbox */}

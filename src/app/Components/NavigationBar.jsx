@@ -55,12 +55,12 @@ export default function NavigationBar({ toggleSidebar, setIsGridView }) {
                     </div>
 
                     {/* Right Section - Icons and Logout */}
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center  gap-4">
                         <img
                             src={getImageURL("/images/search")}
 
                             alt="Search"
-                            className="w-5 h-5 cursor-pointer hidden md:block"
+                            className="w-5 h-5 cursor-pointer hidden  md:block"
                         />
                         <img
                             src={getImageURL(
@@ -72,7 +72,7 @@ export default function NavigationBar({ toggleSidebar, setIsGridView }) {
                         <img
                             src={iconPath}
                             alt="Dark Mode"
-                            className="w-5 h-5 cursor-pointer hidden md:block"
+                            className="w-5 h-5 cursor-pointer  md:block"
                             onClick={toggleTheme}
                         />
                         <button
