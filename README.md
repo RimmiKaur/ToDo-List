@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Task Management App
 
-## Getting Started
+This project is a **Task Management Application** that allows users to log in, manage tasks, and save their data locally using `localStorage`. The app uses `React`, `Redux`, and `Next.js` to manage state and provide a smooth user experience.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **User Authentication**: Log in using pre-configured usernames and passwords from `localStorage`.
+- **Task Management**: Add, edit, delete, mark tasks as complete or incomplete.
+- **Local Storage**: User-specific task data is saved in `localStorage` and persists across sessions.
+- **Responsive UI**: Designed to work seamlessly across different screen sizes.
+- **Grid and List Views**: Toggle between grid and list views for tasks.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- **Frontend**: React, Next.js
+- **State Management**: Redux Toolkit
+- **Styling**: Tailwind CSS
+- **Storage**: Local Storage for persisting user data and tasks
+- **Redux**: User Authentication
 
-To learn more about Next.js, take a look at the following resources:
+![Screenshot 2025-01-15 172241](https://github.com/user-attachments/assets/7acebd2b-7d87-48e5-b94e-6fe7ed68159c)
+![Screenshot 2025-01-15 172213](https://github.com/user-attachments/assets/6370e98c-fea3-4445-af9b-702c8829ab66)
+![Screenshot 2025-01-15 172031](https://github.com/user-attachments/assets/5fef10cd-3ee9-41f1-b0b7-f3dbdbef2576)
+![Screenshot 2025-01-15 172302](https://github.com/user-attachments/assets/e44f8f98-609a-4916-a0d3-fc2cf0cb4d38)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
