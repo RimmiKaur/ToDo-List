@@ -217,7 +217,7 @@ export default function MainContent() {
       />
 
 
-      <div className={`pt-[3%]   h-[48vw] ${theme === "dark" ? "bg-dark text-light" : "bg-light text-dark"}`}>
+      <div className={`pt-[3%]    ${theme === "dark" ? "bg-dark text-light" : "bg-light text-dark"}`}>
 
         <div className="flex ">
           {/* Sidebar */}
@@ -226,7 +226,7 @@ export default function MainContent() {
             tasks={tasks}
             completedTasks={completedTasks}
           />}
-          <div className="flex relative w-full">
+          <div className="flex relative w-full h-[100vh]">
             <div
               className={`transition-all duration-300 ${selectedTask
                 ? isSidebarOpen && window.innerWidth >= 769
