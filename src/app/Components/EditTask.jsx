@@ -59,7 +59,7 @@ export default function EditTask({
   };
 
   return (
-    <div className={`p-6   h-screen ${theme === "dark" ? "bg-dark text-light" : "bg-light text-dark"} `}>
+    <div className={`p-6 h-[100vh]   ${theme === "dark" ? "bg-dark text-light" : "bg-light text-dark"} `}>
       {/* Task Title */}
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center gap-4">
@@ -175,7 +175,7 @@ export default function EditTask({
       </div>
 
       {/* Footer */}
-      <div className="flex justify-between items-center mt-4">
+      <div className="flex justify-between items-center mt-[62vh]">
         <button
           onClick={onClose}
           className="text-gray-500"
