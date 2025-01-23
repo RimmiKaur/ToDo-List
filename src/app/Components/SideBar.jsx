@@ -43,7 +43,7 @@ export default function Sidebar({ isOpen, tasks, completedTasks }) {
       }}    >
       <div className="relative">
         {/* Profile Section */}
-        <div className="absolute md:left-12 left-24 top-[-7%] md:top-[-9%] flex flex-col items-center p-4">
+        <div className="absolute md:left-12 left-24 top-[-7%] md:top-[-8%] flex flex-col items-center p-4">
         <img
             src="/images/avatar.png"
             alt="Profile"
@@ -52,30 +52,30 @@ export default function Sidebar({ isOpen, tasks, completedTasks }) {
           <h2 className="text-md font-semibold">Hey, ABCD</h2>
         </div>
 
-        <div className={` ${theme === "dark" ? "bg-green-950 text-light" : "bg-light text-dark"} pt-16 mt-[22%]`}>
+        <div className={` ${theme === "dark" ? "bg-green-950 text-light" : "bg-light text-dark"} pt-16 mt-[22%] h-[89vh]`}>
           {/* Chart Section */}
           
 
           {/* Navigation Links */}
           <nav className={`${theme === "dark" ? "bg-dark text-light" : "bg-light text-dark"} m-3 p-2`}>
             <ul>
-              <li className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-100">
+              <li className="flex items-center gap-4 p-2 rounded-md ">
                 <img src={getImageURL("/images/task")} alt="All Tasks" className="w-5 h-5" />
                 <span>All Tasks</span>
               </li>
-              <li className="flex items-center gap-4 p-2 rounded bg-green-400 hover:bg-green-100 cursor-pointer">
+              <li className="flex items-center gap-4 p-2 rounded-md bg-green-400 cursor-pointer">
                 <img src={getImageURL("/images/calendar")} alt="Today" className="w-5 h-5" />
                 <span>Today</span>
               </li>
-              <li className="flex items-center gap-4 p-2 rounded hover:bg-green-100 cursor-pointer">
+              <li className="flex items-center gap-4 p-2 rounded-md cursor-pointer">
                 <img src={getImageURL("/images/star")} alt="Important" className="w-5 h-5" />
                 <span>Important</span>
               </li>
-              <li className="flex items-center gap-4 p-2 rounded hover:bg-green-100 cursor-pointer">
+              <li className="flex items-center gap-4 p-2 rounded-md cursor-pointer">
                 <img src={getImageURL("/images/planned")} alt="Planned" className="w-5 h-5" />
                 <span>Planned</span>
               </li>
-              <li className="flex items-center gap-4 p-2 rounded hover:bg-green-100 cursor-pointer">
+              <li className="flex items-center gap-4 p-2 rounded-md cursor-pointer">
                 <img
                   src={getImageURL("/images/assigned-to-me")}
                   alt="Assigned to Me"

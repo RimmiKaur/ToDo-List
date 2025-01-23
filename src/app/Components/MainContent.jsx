@@ -237,7 +237,7 @@ export default function MainContent() {
                   : "w-full"
                 }`}
             >
-              <div className="p-6 w-full ">
+              <div className={`p-6 w-full h-[100vh] ${theme === "dark" ? "bg-dark text-light" : "bg-light text-dark"}`} >
                 <div className="flex">
                   <p className={`text-sm ${theme === "dark" ? " text-white" : "text-gray-500"} text-gray-500 p-2`}>ToDo</p>
                   <img src="/images/caret-down.png" alt="down" />
@@ -360,10 +360,13 @@ export default function MainContent() {
 
 
 
-                <div style={{ display: isGridView ? "none" : "block" } }>
+                <div style={{ display: isGridView ? "none" : "block" }  } className={`${theme === "dark" ? "bg-dark text-light" : "bg-light text-dark"}`}>
                   <h2 className={`text-lg font-semibold mt-8  ${theme === "dark" ? "bg-dark text-light" : "bg-light text-dark"}`}>Completed Tasks</h2>
-
-                  {completedTasks.map((task) => (
+                  {completedTasks.length<1 ?
+                  <p className="text-sm ml-4 text-gray-500">No completed tasks</p>
+                  :
+                  
+                  completedTasks.map((task) => (
                     <div
                       key={task.id}
                       className={`flex items-start justify-between p-4  ${isGridView ? "border border-black" : "border-b-2 border-white"}  hover:shadow-md  `}
@@ -414,7 +417,9 @@ export default function MainContent() {
                         />
                       </button>
                     </div>
-                  ))}
+                  ))
+                  }
+                
                 </div>
 
               </div>
